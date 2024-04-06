@@ -8,13 +8,15 @@ import { LoginService, AuthService } from 'src/app/services';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-recipe',
+  templateUrl: './recipe.component.html',
+  styleUrls: ['./recipe.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RecipeComponent implements OnInit {
 
   logo: string = 'assets/img/logo.png';
+
+  core_img: string = 'assets/img/core-img/';
 
   visibility: string = 'password';
 
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
   submit = () => {
     this.login.login(this.form.value).subscribe(
       (user) => {
-        Swal.fire(SwalAlerts.swalSuccess('', 'Log in successfully')).then(() => {
+        Swal.fire(SwalAlerts.swalSuccess('', 'Se ha iniciado la sesión')).then(() => {
           this.auth.setUser(user);
           this.route.navigate(['/profile']);
         })
