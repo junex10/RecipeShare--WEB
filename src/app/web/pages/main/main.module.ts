@@ -6,20 +6,23 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 // Components
 import { HomeComponent } from './home/home.component';
-
-// Guards
-import { LoginGuard } from 'src/app/guards';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forChild(routes),

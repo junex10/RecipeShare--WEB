@@ -25,7 +25,7 @@ export class VerifyComponent implements OnInit {
       this.auth.verify(token ?? '').subscribe(
         (data) => 
         data?.message !== undefined && (
-          Swal.fire(SwalAlerts.swalSuccess('Cuenta validada', data?.message)).then(() => this.router.navigate(['/login']))
+          Swal.fire(SwalAlerts.swalSuccess('Account verified', data?.message)).then(() => this.router.navigate(['/login']))
         )
       )
     });

@@ -5,7 +5,8 @@ import {
   DatatableComponent,
   HeaderComponent,
   ModalComponent,
-  PrintComponent
+  PrintComponent,
+  FooterComponent
 } from 'src/app/shared';
 
 // External modules
@@ -31,7 +32,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     DatatableComponent,
     ModalComponent,
     UploadFileComponent,
-    PrintComponent
+    PrintComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule,
@@ -59,6 +61,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     ModalComponent,
     UploadFileComponent,
     PrintComponent,
+    FooterComponent,
 
     // Modules
     MatInputModule,
@@ -78,7 +81,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     HeaderComponent,
     DatatableComponent,
     UploadFileComponent,
-    PrintComponent
+    PrintComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
