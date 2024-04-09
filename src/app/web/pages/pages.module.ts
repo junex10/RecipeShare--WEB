@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('src/app/web/pages/auth/auth.module').then(mod => mod.AuthModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('src/app/web/pages/dashboard/dashboard.module').then(mod => mod.DashboardModule)
   }
 ];
 
