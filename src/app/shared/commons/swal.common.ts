@@ -4,8 +4,8 @@ import { Colors } from 'src/app/helpers';
 class SwalAlerts {
 
     swalErrorLocation = (
-        title: string = 'Error de ubicación',
-        text: string = 'No se pudo obtener la ubicación actual, verifique su conexión o permita a la aplicación conocer su ubicación',
+        title: string = 'Location error',
+        text: string = "Couldn't get your location, check your connection or let the app know your location",
     ): SweetAlertOptions => ({
         html: `
         <div>
@@ -18,8 +18,8 @@ class SwalAlerts {
     })
 
     swalAuthAction = (
-        title: string = '¿Desea confirmar esta acción?',
-        confirmButtonText: string = 'Si',
+        title: string = 'Confirm this action?',
+        confirmButtonText: string = 'Yes',
         cancelButtonText: string = 'No'
     ): SweetAlertOptions => ({
         title,
@@ -35,9 +35,9 @@ class SwalAlerts {
     });
 
     swalSuccess = (
-        title: string = 'Acción completada',
-        text: string = 'La acción se ha completado correctamente',
-        buttonText: string = 'Entendido'
+        title: string = 'Action succesfully completed',
+        text: string = 'The action has succesfully been completed',
+        buttonText: string = 'Understood'
     ): SweetAlertOptions => ({
         title,
         text,
@@ -52,8 +52,8 @@ class SwalAlerts {
 
     swalError = (
         title: string = 'Error',
-        text: string = 'Ha ocurrido un error desconocido',
-        buttonText: string = 'Entendido'
+        text: string = 'Unknown error',
+        buttonText: string = 'Understood'
     ): SweetAlertOptions => ({
         title,
         text,
@@ -68,7 +68,7 @@ class SwalAlerts {
 
     swalInfo = (
         text: string,
-        buttonText: string = 'Entendido'
+        buttonText: string = 'Understood'
     ): SweetAlertOptions => ({
         text,
         icon: "info",
@@ -81,8 +81,8 @@ class SwalAlerts {
     });
 
     swalRegisterUser = (
-        title: string = 'Registro exitoso!',
-        text: string = 'Se le ha enviado un correo electrónico',
+        title: string = 'Sign up successfully!',
+        text: string = 'Email sent to your email address',
     ): SweetAlertOptions => ({
         html: `
         <div>
@@ -92,7 +92,7 @@ class SwalAlerts {
         </div>`,
         showCancelButton: false,
         showConfirmButton: true,
-        confirmButtonText: 'Entendido',
+        confirmButtonText: 'Understood',
         customClass: {
             confirmButton: 'btn btn-success'
         },
