@@ -18,7 +18,7 @@ export class DatatableComponent implements OnChanges {
   @Input('page') page: number = 1;
   @Input('perPage') perPage: number = Constants.PER_PAGE_WEB;
   @Input('header') header: any[] = ['Example Column 1', 'Example Column 2'];
-  @Input('notFoundText') notFoundText: string = 'No hay datos por mostrar';
+  @Input('notFoundText') notFoundText: string = 'There is not data to show';
   @Input('thStyles') thStyles: any = '';
   @Input('thItemsStyles') thItemsStyles: any = '';
   @Input('id') id: string = 'datatable';
@@ -52,16 +52,16 @@ export class DatatableComponent implements OnChanges {
         responsive: true,
         data: this.data,
         language: {
-          processing: "Procesando...",
-          search: "Buscar:",
-          lengthMenu: "Mostrar _MENU_ Elementos",
-          info: "Mostrando desde _START_ al _END_ de _TOTAL_ elementos",
-          infoEmpty: "Mostrando ningún elemento.",
-          infoFiltered: "(filtrado _MAX_ elementos total)",
+          processing: "Please wait...",
+          search: "Search:",
+          lengthMenu: "Show _MENU_ Items",
+          info: "Showing from _START_ to _END_ of _TOTAL_ items",
+          infoEmpty: "No items found",
+          infoFiltered: "(filtrado _MAX_ items total)",
           infoPostFix: "",
-          loadingRecords: "Cargando registros...",
-          zeroRecords: "No se encontraron registros",
-          emptyTable: "No hay datos disponibles en la tabla",
+          loadingRecords: "Loading logs...",
+          zeroRecords: "Could not found items",
+          emptyTable: "There's not data available on the table",
         },
         ...this.options,
         ...this.language

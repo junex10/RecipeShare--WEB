@@ -57,8 +57,8 @@ export class ForgotAccountComponent implements OnInit {
   authEmail = () => {
     this.auth.recover(this.email).subscribe(
       (data) => {
-        if (data.user) Swal.fire(SwalAlerts.swalSuccess('Correo', 'Se te ha enviado un código al electrónico')).then(() => this.step = 2);
-        else Swal.fire(SwalAlerts.swalError('Correo', 'El correo electrónico no existe'));
+        if (data.user) Swal.fire(SwalAlerts.swalSuccess('Email', 'Code sent to your email address')).then(() => this.step = 2);
+        else Swal.fire(SwalAlerts.swalError('Email', 'Email not found'));
       }
     )
   }
