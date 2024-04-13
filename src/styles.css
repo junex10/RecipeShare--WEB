@@ -8,6 +8,20 @@
     --warning: #FECA40;
     --gray: #424242;
     --item-selected: #ced1d6;
+    --table-border: #1a2131;
+    --table-header: #1a2131;
+    --action-color: #2869ff;
+    --action-color-hover: #6291fd;
+    --filter-reset: #2c394f;
+    --app-bg: #fff;
+    --sidebar: #f3f6fd;
+    --app-content-secondary-color: #f3f6fd;
+    --app-content-main-color: #1f1c2e;
+    --sidebar-link: #1f1c2e;
+    --sidebar-hover-link: rgba(195, 207, 244, 0.5);
+    --sidebar-active-link: rgba(195, 207, 244, 1);
+    --sidebar-main-color: #1f1c2e;
+    --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 /* FONTS */
 @font-face {

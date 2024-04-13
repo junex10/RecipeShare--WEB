@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       (user) => {
         Swal.fire(SwalAlerts.swalSuccess('', 'Log in successfully')).then(() => {
           this.auth.setUser(user);
-          this.route.navigate(['/profile']);
+          this.route.navigate(['/dashboard']);
         })
       },
       () => Swal.fire(SwalAlerts.swalError())
