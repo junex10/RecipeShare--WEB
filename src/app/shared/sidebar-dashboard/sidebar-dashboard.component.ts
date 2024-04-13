@@ -5,11 +5,11 @@ import { AuthService } from 'src/app/services';
 import { ENVIRONMENT, MENU } from 'src/app/shared';
 
 @Component({
-  selector: 'app-sidebar-dashboard',
+  selector: 'app-sidebar',
   templateUrl: './sidebar-dashboard.component.html',
   styleUrls: ['./sidebar-dashboard.component.css']
 })
-export class SidebarDashboardComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   showMenu: boolean = false;
   user: GetUserDTO | any = '';

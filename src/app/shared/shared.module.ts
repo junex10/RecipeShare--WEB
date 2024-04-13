@@ -25,7 +25,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { PipesModule } from '../pipes/pipes.module';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard.component';
+import { SidebarComponent } from './sidebar-dashboard/sidebar-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard
     UploadFileComponent,
     PrintComponent,
     FooterComponent,
-    SidebarDashboardComponent
+    SidebarComponent
   ],
   imports: [
     RouterModule,
@@ -64,7 +64,7 @@ import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard
     UploadFileComponent,
     PrintComponent,
     FooterComponent,
-    SidebarDashboardComponent,
+    SidebarComponent,
 
     // Modules
     MatInputModule,
@@ -86,7 +86,7 @@ import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard
     UploadFileComponent,
     PrintComponent,
     FooterComponent,
-    SidebarDashboardComponent
+    SidebarComponent
   ]
 })
 export class SharedModule { }
