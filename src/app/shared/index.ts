@@ -10,6 +10,7 @@ import { DatatableComponent } from './datatable/datatable.component';
 import { ModalComponent } from './modal/modal.component';
 import { PrintComponent } from './print/print.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarDashboardComponent } from './sidebar-dashboard/sidebar-dashboard.component';
 
 export {
     SwalAlerts,
@@ -23,5 +24,6 @@ export {
     DatatableComponent,
     ModalComponent,
     PrintComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarDashboardComponent
 };
