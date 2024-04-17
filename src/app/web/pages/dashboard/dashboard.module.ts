@@ -7,17 +7,23 @@ import { SharedModule } from 'src/app/shared/shared.module';
 // Components
 
 import { ProfileComponent } from './profile/profile.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ProfileComponent
+  },
+  {
+    path: 'recipes',
+    component: RecipesComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    RecipesComponent
   ],
   imports: [
     RouterModule.forChild(routes),

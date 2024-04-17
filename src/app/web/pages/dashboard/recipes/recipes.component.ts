@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css']
 })
 
-export class ProfileComponent implements OnInit {
+export class RecipesComponent implements OnInit {
 
   data: any[] = [];
   header = ['#', 'name', 'Preparation time', 'difficulty', 'Meal people'];
