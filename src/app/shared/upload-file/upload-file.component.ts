@@ -29,9 +29,9 @@ export class UploadFileComponent implements OnInit {
   @ViewChild('fileInput') fileInput: any;
   @Output() file = new EventEmitter<any>();
 
-  @Input('onText') onText: string = 'Subir archivo';
-  @Input('onSuccessText') onSuccessText: string = 'Archivo subido';
-  @Input('onWaitingText') onWaitingText: string = 'Subiendo archivo';
+  @Input('onText') onText: string = 'Add attachment';
+  @Input('onSuccessText') onSuccessText: string = 'File uploaded';
+  @Input('onWaitingText') onWaitingText: string = 'Uploading file';
 
   constructor(
     private fb: FormBuilder,

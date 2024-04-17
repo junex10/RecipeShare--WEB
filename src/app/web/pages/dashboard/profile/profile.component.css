@@ -542,4 +542,6 @@
  .gridView .cell-label {
 	 opacity: 0.6;
 }
- 
+.input{
+	background-color: white !important;
+}
