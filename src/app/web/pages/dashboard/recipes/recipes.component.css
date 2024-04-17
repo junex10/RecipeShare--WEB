@@ -2,8 +2,17 @@
  * {
 	 box-sizing: border-box;
 }
-.g-sidenav-show{
-	width: 100% !important;
+
+ .light:root {
+	 --app-bg: #fff;
+	 --sidebar: #f3f6fd;
+	 --app-content-secondary-color: #f3f6fd;
+	 --app-content-main-color: #1f1c2e;
+	 --sidebar-link: #1f1c2e;
+	 --sidebar-hover-link: rgba(195, 207, 244, 0.5);
+	 --sidebar-active-link: rgba(195, 207, 244, 1);
+	 --sidebar-main-color: #1f1c2e;
+	 --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
  body, html {
 	 margin: 0;
