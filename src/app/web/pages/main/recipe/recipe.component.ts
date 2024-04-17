@@ -51,7 +51,7 @@ export class RecipeComponent implements OnInit {
       (user) => {
         Swal.fire(SwalAlerts.swalSuccess('', 'Se ha iniciado la sesión')).then(() => {
           this.auth.setUser(user);
-          this.route.navigate(['/profile']);
+          this.route.navigate(['/dashboard/profile']);
         })
       },
       () => Swal.fire(SwalAlerts.swalError())

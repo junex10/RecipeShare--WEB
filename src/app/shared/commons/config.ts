@@ -21,7 +21,7 @@ export const MENU = [
           {
             name: 'Perfil',
             icon: "fa-solid fa-user",
-            route: '/profile'
+            route: '/dashboard/profile'
           }
         ],
       },
@@ -53,7 +53,7 @@ export const MENU = [
           {
             name: 'Perfil',
             icon: "fa-solid fa-user",
-            route: '/profile'
+            route: '/dashboard/profile'
           }
         ],
       },
