@@ -14,12 +14,19 @@ export class SidebarComponent implements OnInit {
   @Input('profile') profile: boolean = false;
   @Input('recipes') recipes: boolean = false;
 
+  user: any;
+  userImage: string = 'assets/img/user.png';
+
   constructor(
     private route: Router,
     private auth: AuthService
   ) { }
 
   ngOnInit(): void {
-   
+    this.user = this.auth.getUser()?.user;
+  }
+
+  logout = () => {
+    this.auth.logout();
   }
 }
