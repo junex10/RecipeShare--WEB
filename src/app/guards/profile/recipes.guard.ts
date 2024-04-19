@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services';
 @Injectable({
   providedIn: 'root'
 })
-export class PatientGuard implements CanActivate {
+export class RecipesGuard implements CanActivate {
   constructor(
     private auth: AuthService,
     private router: Router
@@ -18,10 +18,10 @@ export class PatientGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       this.auth.checkPermissions({
         token: this.auth.getUser().token,
-        code: '/patient/appointments'
+        code: '/recipes'
       })
       .catch(() => {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/dashboard']);
       })
     return true;
   }

@@ -5,7 +5,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 // Guards
-import { PatientGuard, ProfileGuard } from 'src/app/guards';
+import { RecipesGuard, ProfileGuard } from 'src/app/guards';
 
 // Components
 
@@ -20,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'recipes',
-    component: RecipesComponent
+    component: RecipesComponent,
+    canActivate: [RecipesGuard]
   }
 ];
 
