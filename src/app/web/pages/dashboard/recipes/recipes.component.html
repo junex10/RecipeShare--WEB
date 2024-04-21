@@ -1,3 +1,48 @@
+<!-- New Recipe -->
+<app-modal
+    title="New recipe"
+    [showModal]="openEditModal"
+    (close)="this.openEditModal = false"
+    [styles]="editUserStyle"
+    acceptButton="Submit"
+    (accept)="newRecipe()"
+>
+    <ng-container>
+        <form [formGroup]="form" autocomplete="off">
+            <div class="row">
+                <div class="col-12">
+                    <img class="recipePic d-block m-auto" [src]="recipeImage">
+                    <app-upload-file
+                    (file)="onImage($event)"
+                    ></app-upload-file>
+                </div>
+                <hr class="line" />
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <mat-form-field class="input" appearance="standard">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" name="name" required type="text">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                    <mat-form-field class="input" appearance="standard">
+                        <mat-label>Cooking time</mat-label>
+                        <input matInput formControlName="cooking_time" name="cooking_time" required="false" type="text">
+                    </mat-form-field>
+                </div>
+				<div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                    <mat-form-field class="input" appearance="standard">
+						<mat-select placeholder="Cooking time type">
+						  <mat-option *ngFor="let food of foods" [value]="food.value">
+							{{ food.viewValue }}
+						  </mat-option>
+						</mat-select>
+					  </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </ng-container>
+</app-modal>
+<!-- End New Recipe-->
 <div class="app-container">
 	<app-sidebar [recipes]="true"></app-sidebar>
 	<div class="app-content">
@@ -6,7 +51,7 @@
 	  </div>
 	  <div class="app-content-actions">
 		<input class="search-bar" placeholder="Search..." type="text">
-		
+		<button mat-raised-button class="button btn-success" (click)="openRecipes()">New</button>
 	  </div>
 	  <div class="products-area-wrapper tableView">
 		<div class="products-header">

@@ -42,5 +42,10 @@ export default {
 		FRIDAY: 5,
 		SATURDAY: 6,
 		SUNDAY: 0
+	},
+	COOKING_TYPE_TIME: {
+		MINUTES: 0,
+		HOURS: 1,
+		DAYS: 2
 	}
 }
