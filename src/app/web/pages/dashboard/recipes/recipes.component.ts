@@ -20,10 +20,16 @@ export class RecipesComponent implements OnInit {
 
   form: FormGroup;
 
-  foods = [
+  food_time = [
     {value: Constants.COOKING_TYPE_TIME.MINUTES, viewValue: 'Minutes'},
     {value: Constants.COOKING_TYPE_TIME.HOURS, viewValue: 'Hours'},
     {value: Constants.COOKING_TYPE_TIME.DAYS, viewValue: 'Days'}
+  ];
+
+  difficulty = [
+    {value: Constants.DIFFICULTY.EASY, viewValue: 'Easy'},
+    {value: Constants.DIFFICULTY.MEDIUM, viewValue: 'Medium'},
+    {value: Constants.DIFFICULTY.HARD, viewValue: 'Hard'}
   ];
 
   openEditModal: boolean = false;
@@ -38,6 +44,7 @@ export class RecipesComponent implements OnInit {
     this.form = this.fb.group({
       name: [null, Validators.required],
       cooking_time: [null],
+      description: [null],
       photo: [null],
       id: [null]
     })
@@ -59,6 +66,7 @@ export class RecipesComponent implements OnInit {
   }
 
   get name() { return this.form.get('name')?.value }
-  get cooking_time() { return this.form.get('lastname')?.value }
+  get cooking_time() { return this.form.get('cooking_time')?.value }
+  get description() { return this.form.get('description')?.value }
   get photo() { return this.form.get('photo')?.value }
 }
