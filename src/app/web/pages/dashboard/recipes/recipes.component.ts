@@ -95,6 +95,7 @@ export class RecipesComponent implements OnInit {
       description: [null],
       preparation_time: [null],
       preparation_time_type: [null],
+      difficulty_field: [null],
       photo: [null]
     })
   }
@@ -120,5 +121,6 @@ export class RecipesComponent implements OnInit {
   get description() { return this.form.get('description')?.value }
   get preparation_time() { return this.form.get('preparation_time')?.value }
   get preparation_time_type() { return this.form.get('preparation_time_type')?.value }
+  get difficulty_field() { return this.form.get('difficulty_field')?.value }
   get photo() { return this.form.get('photo')?.value }
 }
