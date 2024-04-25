@@ -20,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import { DataTablesModule } from 'angular-datatables';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -52,6 +53,7 @@ import { SidebarComponent } from './sidebar-dashboard/sidebar-dashboard.componen
     MatDatepickerModule,
     MatSelectModule,
     MatDialogModule,
+    AngularEditorModule,
 
     DataTablesModule,
     NgxPaginationModule,
@@ -78,6 +80,7 @@ import { SidebarComponent } from './sidebar-dashboard/sidebar-dashboard.componen
     MatDatepickerModule,
     MatSelectModule,
     MatDialogModule,
+    AngularEditorModule,
     FormsModule,
     ReactiveFormsModule,
     PipesModule

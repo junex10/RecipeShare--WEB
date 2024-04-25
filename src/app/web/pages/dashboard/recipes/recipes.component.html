@@ -38,7 +38,7 @@
 						</mat-select>
 					  </mat-form-field>
                 </div>
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="col-12">
                     <mat-form-field class="input" appearance="standard">
 						<mat-select placeholder="Difficulty">
 						  <mat-option *ngFor="let dif of difficulty" [value]="dif.value">
@@ -48,11 +48,26 @@
 					  </mat-form-field>
                 </div>
 				<div class="col-12">
-					<mat-form-field class="input" appearance="standard">
-                        <mat-label>Description</mat-label>
-                        <input matInput formControlName="description" name="description" required type="text">
-                    </mat-form-field>
+					<div class="description">
+						<mat-label>Description</mat-label>
+					</div>
+					<angular-editor formControlName="description" [config]="editorConfig"></angular-editor>
 				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <mat-form-field class="input" appearance="standard">
+                        <mat-label>Preparation time</mat-label>
+                        <input matInput formControlName="preparation_time" name="preparation_time" required="false" type="text">
+                    </mat-form-field>
+                </div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <mat-form-field class="input" appearance="standard">
+						<mat-select placeholder="Preparation time type">
+						  <mat-option *ngFor="let food of food_time" [value]="food.value">
+							{{ food.viewValue }}
+						  </mat-option>
+						</mat-select>
+					</mat-form-field>
+                </div>
             </div>
         </form>
     </ng-container>
