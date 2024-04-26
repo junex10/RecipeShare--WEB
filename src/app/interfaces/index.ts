@@ -1,5 +1,6 @@
 import { IAUTH } from './auth.interface';
 import { IPROFILE } from './profile.interface';
+import { IRECIPE } from './recipe.interface';
 
 // Patient
 import { 
@@ -12,6 +13,7 @@ import { IDOCTOR_APPOINTMENTS } from './doctor/appointments.interface';
 export {
     IAUTH,
     IPROFILE,
+    IRECIPE,
 
     IPATIENTS,
     IPATIENTS_APPOINTMENTS,
