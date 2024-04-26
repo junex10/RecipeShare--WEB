@@ -107,7 +107,7 @@ export class RecipesComponent implements OnInit {
   openRecipes = () => this.openEditModal = true;
 
   newRecipe = () => {
-
+    console.log(this.form.value, ' HERE ')
   }
 
   onImage = (file: any) => {

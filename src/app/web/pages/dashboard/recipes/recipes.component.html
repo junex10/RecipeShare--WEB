@@ -8,7 +8,7 @@
     (accept)="newRecipe()"
 >
     <ng-container>
-        <form [formGroup]="form" autocomplete="off">
+        <form [formGroup]="form" autocomplete="off" (ngSubmit)="newRecipe()">
             <div class="row">
                 <div class="col-12">
                     <img class="recipePic d-block m-auto" [src]="recipeImage">
