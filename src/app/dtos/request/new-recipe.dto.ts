@@ -1,4 +1,5 @@
-export interface NewRecipeDTO {
+export interface RecipesDTO {
+    id?: number;
     name: string;
     cooking_time: string;
     cooking_time_type: number;

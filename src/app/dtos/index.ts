@@ -20,7 +20,9 @@ import {
 
 // New Recipe
 
-import { NewRecipeDTO } from './request/new-recipe.dto';
+import { 
+    RecipesDTO
+} from './request/new-recipe.dto';
 
 // Associates
 
@@ -76,7 +78,7 @@ export {
     OperationDTO,
     ModifyAssociatedDTO,
     GetAppointmentsDTO,
-    NewRecipeDTO,
+    RecipesDTO,
 
     // Resources
     User,

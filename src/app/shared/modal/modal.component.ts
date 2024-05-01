@@ -11,6 +11,7 @@ export class ModalComponent implements OnChanges {
 
   @Input('title') title: string = 'Modal';
   @Input('acceptButton') acceptButton: string | null = null;
+  @Input('deleteButton') deleteButton: string | null = null;
   @Input('closeButton') closeButton: string | null = null;
   @Input('sendButton') sendButton: string | null = null;
   @Input('showModal') showModal: boolean = false;
@@ -18,6 +19,7 @@ export class ModalComponent implements OnChanges {
 
   @Output() close = new EventEmitter<any>();
   @Output() cancel = new EventEmitter<any>();
+  @Output() delete = new EventEmitter<any>();
   @Output() accept = new EventEmitter<any>();
   @Output() context = new EventEmitter<any>();
 
@@ -50,6 +52,11 @@ export class ModalComponent implements OnChanges {
   onAccept = () => {
     this.modalService.dismissAll();
     this.accept.emit();
+  }
+
+  onDelete = () => {
+    this.modalService.dismissAll();
+    this.delete.emit();
   }
 
 }

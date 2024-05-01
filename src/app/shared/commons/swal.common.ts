@@ -24,9 +24,9 @@ class SwalAlerts {
     ): SweetAlertOptions => ({
         title,
         showConfirmButton: true,
-        confirmButtonText: confirmButtonText,
+        confirmButtonText,
         showCancelButton: true,
-        cancelButtonText: cancelButtonText,
+        cancelButtonText,
         icon: "question",
         customClass: {
             confirmButton: 'btn btn-success',
