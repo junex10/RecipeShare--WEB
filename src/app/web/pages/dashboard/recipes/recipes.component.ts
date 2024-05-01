@@ -198,6 +198,7 @@ export class RecipesComponent implements OnInit {
   }
 
   removeItem = () => {
+    console.log(this.itemSelected.id)
     Swal.fire(SwalAlerts.swalAuthAction('Are you sure that you want to remove this meal?'))
     .then(ans => {
       if (ans.isConfirmed) {
@@ -223,9 +224,9 @@ export class RecipesComponent implements OnInit {
   }
 
   onImage = (file: any) => {
-    if (Object.entries(this.itemSelected).length > 0) {
+    /*if (Object.entries(this.itemSelected).length > 0) {
       this.itemSelected = {};
-    }
+    }*/
     this.recipeImage = file.base64;
     this.form.get('photo')?.setValue(file.blob);
   }
