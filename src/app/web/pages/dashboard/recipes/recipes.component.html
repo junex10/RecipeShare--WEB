@@ -191,8 +191,8 @@
 				  <span>{{ item.name }}</span>
 				</div>
 			  <div class="product-cell category"><span class="cell-label">Description:</span>{{ item.description }}</div>
-			  <div class="product-cell sales"><span class="cell-label">Difficulty:</span>{{ item.difficulty }}</div>
-			  <div class="product-cell stock"><span class="cell-label">Preparation time:</span>{{ item.prep_time }}</div>
+			  <div class="product-cell sales"><span class="cell-label">Difficulty:</span>{{ getDifficulty(item.difficulty) }}</div>
+			  <div class="product-cell stock"><span class="cell-label">Preparation time:</span>{{ item.prep_time }} {{ getPrepationTime(item.prep_time_type) }}</div>
 			  <div class="product-cell price"><span class="cell-label">Meal people:</span>{{ item.meal_people || '0' }}</div>
 		</div>
 	  </div>

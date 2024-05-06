@@ -231,6 +231,10 @@ export class RecipesComponent implements OnInit {
     this.form.get('photo')?.setValue(file.blob);
   }
 
+  getDifficulty = (difficulty: number) => (this.difficulty.filter((val) => difficulty === val.value))[0]?.viewValue;
+
+  getPrepationTime = (prep_time: string) => (this.food_time.filter(val => Number(prep_time) === val.value))[0]?.viewValue;
+
   get name() { return this.form.get('name')?.value }
   get cooking_time() { return this.form.get('cooking_time')?.value }
   get cooking_time_type() { return this.form.get('cooking_time_type')?.value }
