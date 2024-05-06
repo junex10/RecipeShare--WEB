@@ -29,6 +29,7 @@ export class RecipesComponent implements OnInit {
   recipes: any[] = [];
 
   form: FormGroup;
+  form_search: FormGroup;
   routeMealPic: string = ENVIRONMENT.storage;
 
   editorConfig: AngularEditorConfig = {
@@ -112,6 +113,10 @@ export class RecipesComponent implements OnInit {
       difficulty_field: [null],
       photo: [null]
     })
+
+    this.form_search = this.fb.group({
+      search: [null]
+    });
   }
 
   ngOnInit(): void {
@@ -235,6 +240,11 @@ export class RecipesComponent implements OnInit {
 
   getPrepationTime = (prep_time: string) => (this.food_time.filter(val => Number(prep_time) === val.value))[0]?.viewValue;
 
+  searchItem = () => {
+    this.recipe.getRecipe({ user_id: this.user.id, search: this.search })
+    .then(data => this.recipes = data.recipes)
+  }
+
   get name() { return this.form.get('name')?.value }
   get cooking_time() { return this.form.get('cooking_time')?.value }
   get cooking_time_type() { return this.form.get('cooking_time_type')?.value }
@@ -243,4 +253,5 @@ export class RecipesComponent implements OnInit {
   get preparation_time_type() { return this.form.get('preparation_time_type')?.value }
   get difficulty_field() { return this.form.get('difficulty_field')?.value }
   get photo() { return this.form.get('photo')?.value }
+  get search() { return this.form_search.get('search')?.value }
 }
