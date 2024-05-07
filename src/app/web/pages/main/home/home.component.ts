@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import {
-  SwalAlerts
+  SwalAlerts,
+  ENVIRONMENT
 } from 'src/app/shared';
 import { LoginService, AuthService } from 'src/app/services';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/services/home/home.service';
+
 
 @Component({
   selector: 'app-home',
@@ -16,48 +19,40 @@ export class HomeComponent implements OnInit {
 
   logo: string = 'assets/img/logo.png';
 
-  core_img: string = 'assets/img/core-img/';
-
-  visibility: string = 'password';
-
-  form: FormGroup;
+  lastRecipe: any = {};
+  recipes: any = [];
+  defaultRoute = ENVIRONMENT.storage;
 
   constructor(
     private fb: FormBuilder,
-    private login: LoginService,
     private route: Router,
-    private auth: AuthService
+    private homeService: HomeService
   ) {
-    this.form = this.fb.group({
-      email: [null, [
-        Validators.required,
-        Validators.email
-      ]],
-      password: [null, [
-        Validators.required,
-        Validators.minLength(6)
-      ]]
-    })
-  }
-
-  ngOnInit(): void {
     
   }
 
-  switchVisibility = () => this.visibility = this.visibility === 'password' ? 'text' : 'password';
-
-  submit = () => {
-    this.login.login(this.form.value).subscribe(
-      (user) => {
-        Swal.fire(SwalAlerts.swalSuccess('', 'Se ha iniciado la sesión')).then(() => {
-          this.auth.setUser(user);
-          this.route.navigate(['/dashboard/profile']);
-        })
-      },
-      () => Swal.fire(SwalAlerts.swalError())
-    )
+  ngOnInit(): void {
+    this.getRecipes({ order: [['id', 'desc']] })
   }
 
-  get email() { return this.form.get('email')?.value }
-  get password() { return this.form.get('password')?.value }
+  getRecipes = (parameters: any) => {
+    this.homeService.getRecipes(parameters)
+    .then((data) => {
+      this.lastRecipe = {
+        image: ENVIRONMENT.storage + data?.recipes[0]?.photo,
+        title: data?.recipes[0]?.name,
+        description: data?.recipes[0]?.description
+      }
+
+      this.recipes = data.recipes;
+    })
+  }
+
+  setMainPic = () => {
+    const style = {
+      'background-image': `url(${this.lastRecipe?.image})`
+    };
+    return style
+  }
+  
 }
