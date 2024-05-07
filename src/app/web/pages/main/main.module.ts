@@ -19,7 +19,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'recipe',
+    path: 'recipe/:id',
     component: RecipeComponent
   }
 ];

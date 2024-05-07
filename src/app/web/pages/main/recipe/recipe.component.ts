@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import {
-  SwalAlerts
+  SwalAlerts,
+  ENVIRONMENT,
+  Constants
 } from 'src/app/shared';
 import { LoginService, AuthService } from 'src/app/services';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HomeService } from 'src/app/services/home/home.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-recipe',
@@ -14,50 +18,45 @@ import { Router } from '@angular/router';
 })
 export class RecipeComponent implements OnInit {
 
-  logo: string = 'assets/img/logo.png';
-
-  core_img: string = 'assets/img/core-img/';
-
-  visibility: string = 'password';
-
-  form: FormGroup;
+  item: any = {};
+  defaultRoute = ENVIRONMENT.storage;
+  moment: any = moment;
 
   constructor(
-    private fb: FormBuilder,
-    private login: LoginService,
-    private route: Router,
-    private auth: AuthService
+    private homeService: HomeService,
+    private route: ActivatedRoute
   ) {
-    this.form = this.fb.group({
-      email: [null, [
-        Validators.required,
-        Validators.email
-      ]],
-      password: [null, [
-        Validators.required,
-        Validators.minLength(6)
-      ]]
-    })
+
   }
+
+  food_time = [
+    {value: Constants.COOKING_TYPE_TIME.MINUTES, viewValue: 'Mins'},
+    {value: Constants.COOKING_TYPE_TIME.HOURS, viewValue: 'Hrs'},
+    {value: Constants.COOKING_TYPE_TIME.DAYS, viewValue: 'Days'}
+  ];
+
+  difficulty = [
+    {value: Constants.DIFFICULTY.EASY, viewValue: 'Easy'},
+    {value: Constants.DIFFICULTY.MEDIUM, viewValue: 'Medium'},
+    {value: Constants.DIFFICULTY.HARD, viewValue: 'Hard'}
+  ];
 
   ngOnInit(): void {
-    
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.homeService.getRecipes({
+        where: {
+          id
+        }
+      })
+      .then((data) => {
+        this.item = data.recipes[0];
+      })
+    });
   }
 
-  switchVisibility = () => this.visibility = this.visibility === 'password' ? 'text' : 'password';
+  getDifficulty = (difficulty: number) => (this.difficulty.filter((val) => difficulty === val.value))[0]?.viewValue;
 
-  submit = () => {
-    this.login.login(this.form.value).subscribe(
-      (user) => {
-        Swal.fire(SwalAlerts.swalSuccess('', 'Se ha iniciado la sesión')).then(() => {
-          this.auth.setUser(user);
-          this.route.navigate(['/dashboard/profile']);
-        })
-      },
-      () => Swal.fire(SwalAlerts.swalError())
-    )
-  }
+  getPrepationTime = (prep_time: string) => (this.food_time.filter(val => Number(prep_time) === val.value))[0]?.viewValue;
 
-  get email() { return this.form.get('email')?.value }
-  get password() { return this.form.get('password')?.value }
 }
