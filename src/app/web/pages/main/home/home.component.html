@@ -48,7 +48,7 @@
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">{{ lastRecipe?.title }}</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms" class="description">{{ lastRecipe?.description }}</p>
-                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                                <a href="#" [routerLink]="['/home/recipe', lastRecipe?.id]" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img [src]="item.photo ? defaultRoute + item.photo : 'assets/img/bg-img/r6.jpg'" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="#" [routerLink]="['/home/recipe', item?.id]">
                                 <h5>{{ item.name }}</h5>
                             </a>
                         </div>

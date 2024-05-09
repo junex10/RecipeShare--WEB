@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
       this.lastRecipe = {
         image: ENVIRONMENT.storage + data?.recipes[0]?.photo,
         title: data?.recipes[0]?.name,
-        description: data?.recipes[0]?.description
+        description: data?.recipes[0]?.description,
+        id: data?.recipes[0]?.id
       }
 
       this.recipes = data.recipes;

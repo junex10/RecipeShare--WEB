@@ -25,7 +25,6 @@
                         <mat-form-field class="input" appearance="outline">
                             <mat-label>Password</mat-label>
                             <input matInput formControlName="password" name="password" required [type]="visibility">
-                            <mat-icon matSuffix (click)="switchVisibility('password')">visibility</mat-icon>
                             <mat-error
                                 *ngIf="form.controls['password'].errors?.required && form.controls['password'].touched">
                                 Password required</mat-error>
@@ -40,7 +39,6 @@
                         <mat-form-field class="input" appearance="outline">
                             <mat-label>Password confirm</mat-label>
                             <input matInput formControlName="password_confirmation" name="password_confirmation" required [type]="visibility_confirm">
-                            <mat-icon matSuffix (click)="switchVisibility('confirm_password')">visibility</mat-icon>
                             <mat-error
                                 *ngIf="form.controls['password_confirmation'].errors">
                                 The passwords must be same</mat-error>
