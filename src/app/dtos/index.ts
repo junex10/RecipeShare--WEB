@@ -12,27 +12,12 @@ import {
     UpdateUserDTO
 } from './request/profile.dto';
 
-// Operations
-
-import {
-    OperationDTO
-} from './request/operations.dto';
-
 // New Recipe
 
 import { 
     RecipesDTO
 } from './request/new-recipe.dto';
 
-// Associates
-
-import {
-    ModifyAssociatedDTO
-} from './request/associates.dto';
-
-import {
-    GetAppointmentsDTO
-} from './request/appointments.dto';
 
 // Resources 
 
@@ -46,24 +31,6 @@ import {
     SelectDTO
 } from './resources/auth.dto';
 
-// Appointments
-
-import {
-    RegisterAppointmentDTO
-} from './resources/appointments.dto';
-
-import {
-    GetSpecializationsDTO,
-    GetDoctorsDTO,
-    GetDatesToHideDTO,
-
-    PatientGetChatsDTO,
-    PatientNewChatDTO,
-    PatientNewMessageDTO,
-    PatientGetLogsDTO,
-    PatientDeleteDTO,
-    PatientViewedDTO
-} from './resources/patient.dto';
 
 import {
     PaginationDTO,
@@ -75,9 +42,6 @@ export {
     LoginDTO,
     RegisterParamsDTO,
     CheckPermissionDTO,
-    OperationDTO,
-    ModifyAssociatedDTO,
-    GetAppointmentsDTO,
     RecipesDTO,
 
     // Resources
@@ -87,17 +51,7 @@ export {
     UpdateUserDTO,
     GetAssociatedDTO,
     Associated,
-    GetSpecializationsDTO,
-    GetDoctorsDTO,
     SelectDTO,
-    GetDatesToHideDTO,
-    RegisterAppointmentDTO,
     PaginationDTO,
     DataTableDTO,
-    PatientGetChatsDTO,
-    PatientNewChatDTO,
-    PatientNewMessageDTO,
-    PatientGetLogsDTO,
-    PatientDeleteDTO,
-    PatientViewedDTO
 };
